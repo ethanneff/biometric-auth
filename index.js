@@ -37,4 +37,14 @@ app.post("/savePublicKey", (req, res) => {
   }
 });
 
+app.delete("/deletePublicKey", (req, res) => {
+  try {
+    const deviceId = req.body.deviceId;
+    delete db[deviceId];
+    res.json({ success: true });
+  } catch (e) {
+    res.json({ success: false });
+  }
+});
+
 app.listen(process.env.PORT || 3333);
