@@ -37,6 +37,14 @@ app.post("/saveBiometricPublicKey", (req, res) => {
   }
 });
 
+app.get("/getBiometricPublicKey", (req, res) => {
+  try {
+    res.json({ success: true, data: db });
+  } catch (e) {
+    res.json({ success: false });
+  }
+});
+
 app.listen(process.env.PORT || 3333);
 
 // const publicKey =
