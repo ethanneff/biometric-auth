@@ -1,0 +1,13 @@
+{
+  "name": "verify-rsa-signature",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "node-rsa": "^1.1.1",
+    "nodemon": "^2.0.7"
+  }
+}
