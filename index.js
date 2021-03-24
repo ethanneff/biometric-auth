@@ -26,18 +26,18 @@ app.post("/verifySignature", (req, res) => {
   }
 });
 
-app.post("/saveBiometricPublicKey", (req, res) => {
+app.post("/savePublicKey", (req, res) => {
   try {
-    const biometricPublicKey = req.body.biometricPublicKey;
+    const publicKey = req.body.publicKey;
     const deviceId = req.body.deviceId;
-    db[deviceId] = biometricPublicKey;
+    db[deviceId] = publicKey;
     res.json({ success: true });
   } catch (e) {
     res.json({ success: false });
   }
 });
 
-app.get("/getBiometricPublicKey", (req, res) => {
+app.get("/getPublicKeys", (req, res) => {
   try {
     res.json({ success: true, data: db });
   } catch (e) {
